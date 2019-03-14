@@ -1,0 +1,49 @@
+{% extends 'news/base.html' %}
+
+{# 标题部分 #}
+{% block titleBlock %}
+    首页内容
+{% endblock %}
+
+{# script部分 #}
+{% block scriptScript %}
+    <link rel="stylesheet" type="text/css" href="../../static/news/css/jquery.pagination.css">
+    <script type="text/javascript" src="../../static/news/js/index.js"></script>
+    <script type="text/javascript" src="../../static/news/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../static/news/js/jquery.pagination.min.js"></script>
+{% endblock %}
+
+{# 分类部分 #}
+{% block headerBlock %}
+    {% for category in data.categoies %}
+        <li class="{% if loop.index == 1 %}active{% endif %}" data-cid="{{ category.id }}"><a href="javascript:;">{{ category.name }}</a></li>
+    {% endfor %}
+{% endblock %}
+
+{# 新闻列表 #}
+{% block contentBlock %}
+    <ul class="list_con fl">
+
+
+
+        </ul>
+<!--<div id="pagination" class="page"></div>-->
+<script>
+
+    <!--$(function(){-->
+        <!--$("#pagination").pagination({-->
+            <!--currentPage: 1,-->
+            <!--totalPage: 2,-->
+            <!--callback: function(current) {-->
+                <!--{#alert('ok!');#}-->
+                <!--window.location.href = '/user/news_list?p='+current-->
+            <!--}-->
+        <!--});-->
+    <!--});-->
+</script>
+{% endblock %}
+
+
+
+
+
